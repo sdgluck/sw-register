@@ -11,6 +11,10 @@ if (typeof define === 'function' && define.amd) {
 }
 
 function register (options) {
+  if (!('serviceWorker' in navigator)) {
+    return Promise.reject(new Error('Service Workers unsupported'))
+  }
+  
   var serviceWorker = navigator.serviceWorker.controller
 
   return Promise.resolve()
