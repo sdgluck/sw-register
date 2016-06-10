@@ -10,7 +10,12 @@ if (typeof define === 'function' && define.amd) {
   self.swRegister = register
 }
 
-function register (options) {
+function register (options, __mockNavigator) {
+  if (__mockNavigator) {
+    var self = { navigator: __mockNavigator }
+    var navigator = self.navigator
+  }
+
   try {self && self.navigator} catch (err) {
     return Promise.reject(new Error('Not a browser context'))
   }
