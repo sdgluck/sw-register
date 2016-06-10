@@ -38,7 +38,7 @@ const register = require('sw-register')
 // Get existing worker
 register().then((worker) => {
   const channel = new MessageChannel()
-  worker.postMessage("Hey!", [channel.ports2])
+  worker.postMessage("Hey!", [channel.port2])
 })
 
 // Register a worker from the client
