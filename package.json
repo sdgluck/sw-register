@@ -1,6 +1,6 @@
 {
   "name": "sw-register",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Service Worker registration utility",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/sdgluck/sw-register/issues"
   },
-  "homepage": "https://github.com/sdgluck/sw-register#readme"
+  "homepage": "https://github.com/sdgluck/sw-register#readme",
+  "devDependencies": {
+    "sinon": "^1.17.4",
+    "tape": "^4.5.1"
+  }
 }
