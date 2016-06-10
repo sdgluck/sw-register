@@ -30,7 +30,7 @@ function register (options) {
         } else if (!registration && options) {
           // No registration but we have options to register one
           return navigator.serviceWorker
-              .register(options.workerUrl, options.workerOptions)
+              .register(options.url, options)
               .then(function (registration) {
                 options.forceUpdate && registration.update()
               })
