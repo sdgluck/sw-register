@@ -1,0 +1,19 @@
+{
+  "name": "sw-register",
+  "version": "0.1.0",
+  "description": "Service Worker registration utility",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdgluck/sw-register.git"
+  },
+  "author": "Sam Gluck <sdgluck@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sdgluck/sw-register/issues"
+  },
+  "homepage": "https://github.com/sdgluck/sw-register#readme"
+}
