@@ -70,8 +70,11 @@ Register or retrieve a Service Worker.
 
 Returns the Service Worker controller.
 
-The options object should contain at least a `url`. All other available
-options for registering a Service Worker can be passed in this object, e.g. `scope`.
+Available options (any not listed can also be passed in):
+
+- `url` (required) the URL of the service worker
+- `scope` (optional) the scope of the service worker
+- `forceUpdate` (optional) call `update()` on the registration?
 
 Example:
 
