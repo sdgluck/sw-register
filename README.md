@@ -68,6 +68,8 @@ Register or retrieve a Service Worker.
 
 - [__register__] {Object} Options object
 
+Returns the Service Worker controller.
+
 The options object should contain at least a `url`. All other available
 options for registering a Service Worker can be passed in this object.
 
