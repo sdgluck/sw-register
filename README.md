@@ -76,7 +76,9 @@ Example:
     register().then((worker) => {
       // do something with the worker
     }).catch((err) => {
-      // no existing worker and no options gets you here
+      // you get here if:
+      // - service workers unsupported
+      // - no existing worker and no options given to register one
     })
 
 ## Contributing
