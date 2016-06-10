@@ -11,9 +11,11 @@ if (typeof define === 'function' && define.amd) {
 }
 
 function register (options) {
-  if (!('navigator' in self)) {
+  try {self && self.navigator} catch (err) {
     return Promise.reject(new Error('Not a browser context'))
-  } else if (!('serviceWorker' in navigator)) {
+  }
+
+  if (!('serviceWorker' in navigator)) {
     return Promise.reject(new Error('Service Workers unsupported'))
   }
 

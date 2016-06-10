@@ -17,7 +17,7 @@ test('register typeof function', function (t) {
 
 test('no args gets existing controller', function (t) {
   register().then(function (worker) {
-    t.equal(navigator.serviceWorker.controller, worker)
+    t.equal('controller', worker)
     t.end()
   })
 })
@@ -32,11 +32,12 @@ test('with options registers new worker', function (t) {
   }
 
   register().then(function () {
-    t.equal(true, navigator.serviceWorker.register.calledWith({
+    var calledWith = navigator.serviceWorker.register.calledWith({
       url: 'url',
       scope: 'scope',
       forceUpdate: false
-    }))
+    })
+    t.equal(true, calledWith)
     navigator.serviceWorker.restore()
     t.end()
   })
