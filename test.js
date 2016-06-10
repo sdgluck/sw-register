@@ -3,9 +3,12 @@ var sinon = require('sinon')
 
 var navigator = {
   serviceWorker: {
+    controller: 'controller',
     register: function () {}
   }
 }
+
+var register = require('./index')
 
 test('register typeof function', function (t) {
   t.equal(typeof register, 'function')
@@ -13,7 +16,10 @@ test('register typeof function', function (t) {
 })
 
 test('no args gets existing controller', function (t) {
-  t.end()
+  register().then(function (worker) {
+    t.equal(navigator.serviceWorker.controller, worker)
+    t.end()
+  })
 })
 
 test('with options registers new worker', function (t) {
