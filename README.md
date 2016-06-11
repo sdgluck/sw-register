@@ -49,6 +49,9 @@ const registration = {
   scope: '/'
 }
 
+// Subsequent calls with a registration object
+// will not attempt re-registration but return
+// the existing registered worker instead
 register(registration).then((worker) => {
   const channel = new MessageChannel()
   worker.postMessage("Hey!", [channel.ports2])
