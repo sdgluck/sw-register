@@ -1,3 +1,5 @@
+'use strict'
+
 var test = require('tape')
 var sinon = require('sinon')
 var _register = require('./index')
