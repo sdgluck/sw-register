@@ -2,6 +2,10 @@ var test = require('tape')
 var sinon = require('sinon')
 var _register = require('./index')
 
+// ---
+// Mocks
+// ---
+
 var navigator = {
   serviceWorker: {
     controller: 'controller',
@@ -12,6 +16,20 @@ var navigator = {
 var register = function (arg) {
   return _register.call(_register, arg, navigator)
 }
+
+// ---
+// Data
+// ---
+
+var registration = {
+  url: 'url',
+  scope: 'scope',
+  forceUpdate: false
+}
+
+// ---
+// Tests
+// ---
 
 test('register typeof function', function (t) {
   t.equal(typeof register, 'function')
@@ -36,16 +54,23 @@ test('no args no existing controller throws', function (t) {
 test('with options registers new worker', function (t) {
   var spy = sinon.spy(navigator.serviceWorker, 'register')
 
-  var registration = {
-    url: 'url',
-    scope: 'scope',
-    forceUpdate: false
-  }
-
   register(registration).then(function () {
     var calledWith = spy.calledWith('url', registration)
     navigator.serviceWorker.register.restore()
     t.equal(true, calledWith)
+    t.end()
+  })
+})
+
+test('with options with existing worker returns existing worker', function (t) {
+  var spy = sinon.spy(navigator.serviceWorker, 'register')
+
+  navigator.serviceWorker.controller = 'controller'
+
+  register(registration).then(function (worker) {
+    navigator.serviceWorker.register.restore()
+    t.equal(worker, 'controller')
+    t.equal(true, spy.callCount === 0)
     t.end()
   })
 })
