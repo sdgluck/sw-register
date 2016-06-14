@@ -1,6 +1,6 @@
 {
   "name": "sw-register",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "description": "Service Worker registration utility",
   "main": "index.js",
   "scripts": {
