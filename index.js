@@ -10,6 +10,11 @@ if (typeof define === 'function' && define.amd) {
   self.swRegister = register
 }
 
+/**
+ * Register or retrieve a Service Worker that controls the page.
+ * @param {Object} options
+ * @returns {Promise}
+ */
 function register (options, __mockSelf) {
   var _self = __mockSelf || self
   var navigator = _self.navigator
