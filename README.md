@@ -8,9 +8,13 @@ Made with ❤ at [@outlandish](http://www.twitter.com/outlandish)
 <a href="http://badge.fury.io/js/sw-register"><img alt="npm version" src="https://badge.fury.io/js/sw-register.svg"></a>
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-Register or retrieve a Service Worker that controls the page.
+Register or retrieve a Service Worker that controls the page with ease...
 
-`sw-register` will always favour returning the active Service Worker over registering a new one.
+- Register a Service Worker with one call to `register(<options>)`
+- Get an existing Service Worker with one call to `register()`
+- Always favours returning the active Service Worker over registering a new one, which means you can put a
+call to `register(<options>)` with options in your init procedure and it will not try to re-register the worker.
+Saving you having to inspect `navigator.serviceWorker.ready` manually, etc.
 
 ## Import
 
