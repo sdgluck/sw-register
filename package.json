@@ -4,7 +4,9 @@
   "description": "Service Worker registration utility",
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "lint": "standard index.js",
+    "test": "node test.js",
+    "prepublish": "npm run -s lint"
   },
   "repository": {
     "type": "git",

@@ -1,9 +1,9 @@
-/* global Promise:false, define:false, module:false */
+/* global Promise:false, define:false, module:false, self:false */
 
 'use strict'
 
 if (typeof define === 'function' && define.amd) {
-  define('sw-register', function () {return register})
+  define('sw-register', function () { return register })
 } else if (typeof module === 'object' && module.exports) {
   module.exports = register
 } else {
@@ -16,7 +16,7 @@ function register (options, __mockNavigator) {
     var navigator = self.navigator
   }
 
-  try {self && self.navigator} catch (err) {
+  try { self && self.navigator } catch (err) {
     return Promise.reject(new Error('Not a browser context'))
   }
 
