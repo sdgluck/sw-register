@@ -10,9 +10,9 @@ if (typeof define === 'function' && define.amd) {
   self.swRegister = register
 }
 
-function register (options, __mockNavigator) {
-  var self = __mockNavigator ? { navigator: __mockNavigator } : self
-  var navigator = self.navigator
+function register (options, __mockSelf) {
+  var _self = __mockSelf || self
+  var navigator = _self.navigator
 
   if (!('serviceWorker' in navigator)) {
     return Promise.reject(new Error('Service Workers unsupported'))

@@ -11,12 +11,12 @@ var _register = require('./index')
 var navigator = {
   serviceWorker: {
     controller: 'controller',
-    register: function () {return Promise.resolve()}
+    register: function () { return Promise.resolve() }
   }
 }
 
 var register = function (arg) {
-  return _register.call(_register, arg, navigator)
+  return _register.call(_register, arg, { navigator: navigator })
 }
 
 // ---
