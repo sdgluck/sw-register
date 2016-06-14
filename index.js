@@ -11,14 +11,8 @@ if (typeof define === 'function' && define.amd) {
 }
 
 function register (options, __mockNavigator) {
-  if (__mockNavigator) {
-    var self = { navigator: __mockNavigator }
-    var navigator = self.navigator
-  }
-
-  try { self && self.navigator } catch (err) {
-    return Promise.reject(new Error('Not a browser context'))
-  }
+  var self = __mockNavigator ? { navigator: __mockNavigator } : self
+  var navigator = self.navigator
 
   if (!('serviceWorker' in navigator)) {
     return Promise.reject(new Error('Service Workers unsupported'))
