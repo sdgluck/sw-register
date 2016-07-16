@@ -16,6 +16,12 @@ Register or retrieve a Service Worker that controls the page with ease...
 call to `register(<options>)` with options in your init procedure and it will not try to re-register the worker.
 Saving you having to inspect `navigator.serviceWorker.ready` manually, etc.
 
+## Install
+
+```sh
+npm install --save sw-register
+```
+
 ## Import
 
 ```js
