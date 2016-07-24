@@ -91,13 +91,15 @@ Available options (any not listed can also be passed in):
 
 Example:
 
-    register().then((worker) => {
-      // do something with the worker
-    }).catch((err) => {
-      // you get here if:
-      // - service workers unsupported
-      // - no existing worker and no options given to register one
-    })
+```js
+register().then((worker) => {
+  // do something with the worker
+}).catch((err) => {
+  // you get here if:
+  // - service workers unsupported
+  // - no existing worker and no options given to register one
+})
+```
 
 ## Contributing
 
