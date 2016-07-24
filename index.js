@@ -38,17 +38,15 @@ function register (options, __mockSelf) {
       } else if (!registration && options) {
         // No registration but we have options to register one
         return navigator.serviceWorker
-            .register(options.url, options)
-            .then(function (registration) {
-              options.forceUpdate && registration.update()
-            })
+          .register(options.url, options)
+          .then(function (registration) {
+            options.forceUpdate && registration.update()
+          })
       } else if (!registration && !options) {
         // No existing worker,
         // no registration that returned one,
         // no options to register one
-        throw new Error(
-          'no active service worker or configuration passed to install one'
-        )
+        throw new Error('no active service worker or configuration passed to install one')
       }
     })
     .then(function () {
